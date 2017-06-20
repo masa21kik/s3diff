@@ -1,0 +1,5 @@
+require "s3diff/version"
+require "s3diff/s3_client"
+require "s3diff/s3_file"
+require "s3diff/local_file"
+require "s3diff/comparator"

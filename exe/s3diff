@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require "s3diff"
+require "s3diff/cli"
+
+S3diff::Cli.new.run(ARGV)
