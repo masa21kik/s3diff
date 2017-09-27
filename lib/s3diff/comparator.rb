@@ -8,8 +8,16 @@ module S3diff
       @file2 = file_object(file2)
     end
 
+    def both_exist?
+      @both_exist ||= begin
+        puts "#{@file1.original_path} is not exist." unless @file1.exist?
+        puts "#{@file2.original_path} is not exist." unless @file2.exist?
+        @file1.exist? && @file2.exist?
+      end
+    end
+
     def same_etag?
-      @file1.etag == @file2.etag
+      both_exist? && @file1.etag == @file2.etag
     end
 
     def same?
